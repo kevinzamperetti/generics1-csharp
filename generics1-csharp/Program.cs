@@ -6,18 +6,33 @@ namespace course
     {
         static void Main(string[] args)
         {
-            PrintService printService = new PrintService();
+            PrintService<int> printServiceInt = new PrintService<int>();
+            PrintService<string> printServiceString = new PrintService<string>();
 
-            Console.Write("How many values? ");
+            Console.Write("How many values? (int) ");
             int n = int.Parse(Console.ReadLine());
 
             for(int i=0; i<n; i++) {
                 int x = int.Parse(Console.ReadLine());
-                printService.AddValue(x);
+                printServiceInt.AddValue(x);
             }
 
-            printService.print();
-            Console.WriteLine("First " + printService.first());
+            printServiceInt.print();
+            Console.WriteLine("First " + printServiceInt.first());
+
+            Console.WriteLine("===============================");
+
+            Console.Write("How many values? (string) ");
+            n = int.Parse(Console.ReadLine());
+
+            for (int i = 0; i < n; i++) {
+                string s = Console.ReadLine();
+                printServiceString.AddValue(s);
+            }
+
+            printServiceString.print();
+            Console.WriteLine("First " + printServiceString.first());
+
 
         }
     }

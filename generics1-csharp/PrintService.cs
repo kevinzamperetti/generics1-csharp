@@ -1,16 +1,13 @@
 ﻿using System;
 
-namespace course
-{
-    class PrintService
-    {
+namespace course {
+    class PrintService<T> {
 
-        private int[] _values = new int[10];
+        private T[] _values = new T[10];
 
         private int _count = 0;
 
-        public void AddValue(int value)
-        {
+        public void AddValue(T value) {
             if (_count == 10) {
                 throw new InvalidOperationException("PrintService is full");
             }
@@ -18,7 +15,7 @@ namespace course
             _count++;
         }
 
-        public int first() {
+        public T first() {
 
             if (_count == 0) {
                 throw new InvalidOperationException("PrintService is empty");
@@ -28,7 +25,7 @@ namespace course
         }
 
         public void print() {
-            Console.WriteLine("[");
+            Console.Write("[");
             for (int i = 0; i < _count - 1; i++) {
                 Console.Write(_values[i] + ", ");
             }
