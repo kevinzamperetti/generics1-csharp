@@ -1,9 +1,7 @@
 ﻿using System;
 
-namespace course
-{
-    class Program
-    {
+namespace course {
+    class Program {
         static void Main(string[] args)
         {
             PrintService<int> printServiceInt = new PrintService<int>();
